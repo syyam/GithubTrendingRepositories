@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_horizontal_15">15dp</dimen>
+    <dimen name="margin_top_button_40">40dp</dimen>
+    <dimen name="margin_top_text_10">10dp</dimen>
+    <dimen name="margin_bottom_text_16">16dp</dimen>
+    <dimen name="size_text_heading_16">16sp</dimen>
+    <dimen name="margin_left_text_4">4dp</dimen>
+    <dimen name="margin_left_text_12">12dp</dimen>
+    <dimen name="text_size_12">12sp</dimen>
+    <dimen name="margin_bottom_text_8">8dp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="padding_drawable">4dp</dimen>
+    <dimen name="margin_top_text_5">5dp</dimen>
+</resources>

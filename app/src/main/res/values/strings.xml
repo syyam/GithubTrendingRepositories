@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GithubTrendingRepos</string>
+    <string name="retry">Retry</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="light_mode">Light Mode</string>
+    <string name="results_error">Something went wrong..</string>
+    <string name="results_error_desc">An alien is probably blocking your signal.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="error_loading">Couldn\'t Load Data</string>
+
+</resources>
