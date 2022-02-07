@@ -13,7 +13,7 @@ buildscript {
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
 
 //        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath ('org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10')
+        classpath('org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10')
 
 
 //        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$rootProject.navVersion"
@@ -75,4 +75,7 @@ ext {
 
     // Lottie
     lottieVersion = "4.2.2"
+
+    // Shimmer
+    shimmerVersion = "0.5.0"
 }

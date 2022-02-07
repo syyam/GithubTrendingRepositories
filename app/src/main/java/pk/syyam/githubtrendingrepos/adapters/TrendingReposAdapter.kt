@@ -1,20 +1,15 @@
 package pk.syyam.githubtrendingrepos.adapters
 
-import android.graphics.Typeface
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.StyleSpan
 import android.transition.TransitionManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.ViewCompat
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import pk.syyam.githubtrendingrepos.databinding.ItemTrendingRepoBinding
-import pk.syyam.githubtrendingrepos.model.Repo
+import pk.syyam.githubtrendingrepos.model.Items
 
 
 // PagingDataAdapter — a RecyclerView.Adapter that presents PagingData in a RecyclerView.
@@ -22,14 +17,14 @@ import pk.syyam.githubtrendingrepos.model.Repo
 // and uses DiffUtil on a background thread to compute fine-grained updates as updated
 // content is received in the form of new PagingData objects.
 class TrendingReposAdapter :
-    PagingDataAdapter<Repo, TrendingReposAdapter.ViewHolder>(RepoDiffCallBack()) {
+    PagingDataAdapter<Items, TrendingReposAdapter.ViewHolder>(RepoDiffCallBack()) {
 
-    class RepoDiffCallBack : DiffUtil.ItemCallback<Repo>() {
-        override fun areItemsTheSame(oldItem: Repo, newItem: Repo): Boolean {
+    class RepoDiffCallBack : DiffUtil.ItemCallback<Items>() {
+        override fun areItemsTheSame(oldItem: Items, newItem: Items): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Repo, newItem: Repo): Boolean {
+        override fun areContentsTheSame(oldItem: Items, newItem: Items): Boolean {
             return oldItem == newItem
         }
     }

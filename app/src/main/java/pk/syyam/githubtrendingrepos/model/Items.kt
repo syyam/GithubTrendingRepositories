@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Repo(
+data class Items(
 
     @SerializedName("id")
     val id: Long,
@@ -19,31 +19,16 @@ data class Repo(
     @SerializedName("description")
     val description: String?,
 
-    @SerializedName("html_url")
-    val url: String,
 
     @SerializedName("stargazers_count")
     val stars: Int,
 
-    @SerializedName("forks_count")
-    val forks: Int,
 
     @SerializedName("language")
     val language: String?,
 
-    @SerializedName("watchers")
-    val watchers: Int,
 
     @SerializedName("owner")
     val owner: Owner,
 
-    @SerializedName("created_at")
-    val createDate: String,
-
-    @SerializedName("updated_at")
-    val updateDate: String,
-
-    @SerializedName("open_issues")
-    val openIssues: Int
-
-) : Parcelable
+    ) : Parcelable

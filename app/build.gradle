@@ -14,7 +14,6 @@ android {
         targetSdk rootProject.targetSdk
         versionCode rootProject.versionCode
         versionName rootProject.versionName
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -78,5 +77,7 @@ dependencies {
     // Lottie
     implementation "com.airbnb.android:lottie:$rootProject.lottieVersion"
 
+    // Facebook Shimmer
+    implementation "com.facebook.shimmer:shimmer:$rootProject.shimmerVersion"
 
 }

@@ -14,21 +14,20 @@
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginLeft="16dp"
+            android:layout_width="@dimen/size_avatar"
+            android:layout_height="@dimen/size_avatar"
+            android:layout_marginLeft="@dimen/margin_horizontal_15"
             android:layout_marginTop="20dp"
-            android:layout_marginRight="16dp"
+            android:layout_marginRight="@dimen/margin_horizontal_15"
             android:layout_marginBottom="20dp"
-            android:elevation="100dp"
             card_view:cardBackgroundColor="@android:color/white"
-            card_view:cardCornerRadius="8dp"
+            card_view:cardCornerRadius="@dimen/radius_avatar"
             card_view:cardPreventCornerOverlap="false">
 
             <ImageView
                 android:id="@+id/image"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="@dimen/size_avatar"
+                android:layout_height="@dimen/size_avatar"
                 android:src="@drawable/ic_star" />
 
         </androidx.cardview.widget.CardView>

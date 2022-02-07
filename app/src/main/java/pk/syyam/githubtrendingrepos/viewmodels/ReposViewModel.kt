@@ -1,5 +1,6 @@
 package pk.syyam.githubtrendingrepos.viewmodels
 
+import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
@@ -20,8 +21,5 @@ class ReposViewModel @Inject constructor(
     val repos = repoData.switchMap {
         repository.getSearchResults().cachedIn(viewModelScope)
     }
-
-
-
 
 }

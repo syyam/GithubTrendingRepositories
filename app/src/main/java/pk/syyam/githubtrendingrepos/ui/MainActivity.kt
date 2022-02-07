@@ -6,9 +6,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import dagger.hilt.android.AndroidEntryPoint
 import pk.syyam.githubtrendingrepos.R
-import pk.syyam.githubtrendingrepos.preference.PreferenceKeys
+import pk.syyam.githubtrendingrepos.databinding.ActivityMainBinding
+import pk.syyam.githubtrendingrepos.utils.PreferenceKeys
 import javax.inject.Inject
 
 
@@ -16,7 +18,18 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
     @set:Inject
     internal var sharedPreferences: SharedPreferences? = null
+    private var binding: ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        setupView()
+
+
+    }
+
+    private fun setupView() {
         if (sharedPreferences?.getString(PreferenceKeys.KEY_PREF_THEME, "")
                 .equals(getString(R.string.string_dark_theme))
         ) {
@@ -29,11 +42,48 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "light", Toast.LENGTH_SHORT).show()
 
         }
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+//        setSupportActionBar(binding?.toolbarTop);
+
+//        binding?.toolbarTop?.setTitle("Test Subtitle");
+//        binding?.toolbarTop?.inflateMenu(R.menu.menu_theme);
+//
+//        binding?.toolbarTop?.setOnMenuItemClickListener { item ->
+//            when (item.itemId) {
+//                R.id.menu_light -> {
+//                    sharedPreferences?.edit()
+//                        ?.putString(
+//                            PreferenceKeys.KEY_PREF_THEME,
+//                            getString(R.string.string_light_theme)
+//                        )?.apply()
+//
+//                    recreate();
+//
+//                    true
+//                }
+//
+//                R.id.menu_dark -> {
+//                    sharedPreferences?.edit()
+//                        ?.putString(
+//                            PreferenceKeys.KEY_PREF_THEME,
+//                            getString(R.string.string_dark_theme)
+//                        )?.apply()
+//                    recreate();
+//                    true
+//                }
+//
+//            }
+//            true
+//        }
 
 
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        binding = null
+    }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         super.onCreateOptionsMenu(menu)
@@ -45,7 +95,10 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.menu_light -> {
                 sharedPreferences?.edit()
-                    ?.putString(PreferenceKeys.KEY_PREF_THEME, getString(R.string.string_light_theme))?.apply()
+                    ?.putString(
+                        PreferenceKeys.KEY_PREF_THEME,
+                        getString(R.string.string_light_theme)
+                    )?.apply()
 
                 recreate();
 
@@ -54,7 +107,10 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu_dark -> {
                 sharedPreferences?.edit()
-                    ?.putString(PreferenceKeys.KEY_PREF_THEME, getString(R.string.string_dark_theme))?.apply()
+                    ?.putString(
+                        PreferenceKeys.KEY_PREF_THEME,
+                        getString(R.string.string_dark_theme)
+                    )?.apply()
                 recreate();
                 true
             }
