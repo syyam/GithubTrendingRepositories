@@ -11,7 +11,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ReposViewModel @Inject constructor(
-    private val repository: GithubTrendingRepository
+    private val repository: GithubTrendingRepository,
 ) : ViewModel() {
 
     // initially the mutableLiveData will be empty
@@ -20,6 +20,8 @@ class ReposViewModel @Inject constructor(
     val repos = repoData.switchMap {
         repository.getSearchResults().cachedIn(viewModelScope)
     }
+
+
 
 
 }

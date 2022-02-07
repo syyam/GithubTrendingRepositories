@@ -29,7 +29,7 @@
                 android:id="@+id/image"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
-                android:background="@drawable/ic_star" />
+                android:src="@drawable/ic_star" />
 
         </androidx.cardview.widget.CardView>
 
