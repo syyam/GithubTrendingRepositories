@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/bg_color"
     android:layout_height="match_parent">
 
 
@@ -21,23 +22,23 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
-            <include layout="@layout/repo_placeholder_item" />
+            <include layout="@layout/item_repo_placeholder" />
 
         </LinearLayout>
 
@@ -73,7 +74,8 @@
         android:layout_marginRight="@dimen/margin_horizontal_15"
         android:gravity="center"
         android:orientation="vertical"
-        android:visibility="gone"
+        android:visibility="visible"
+        android:background="@color/bg_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_top_text_10"
+            android:textColor="@color/textColor"
             android:text="@string/results_error"
             android:textSize="@dimen/size_text_heading_16"
             android:textStyle="bold" />
@@ -102,9 +105,10 @@
             android:id="@+id/emptyTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
             android:text="@string/results_error_desc" />
 
-        <com.google.android.material.button.MaterialButton
+        <Button
             android:id="@+id/btnRetry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

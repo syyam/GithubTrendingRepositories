@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">GithubTrendingRepos</string>
     <string name="retry">Retry</string>
+    <string name="Label"></string>
     <string name="dark_mode">Dark Mode</string>
     <string name="light_mode">Light Mode</string>
     <string name="results_error">Something went wrong..</string>
