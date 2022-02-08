@@ -8,19 +8,24 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_top"
-        android:layout_height="wrap_content"
+        android:theme="@style/MyToolbarStyle"
+
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:minHeight="?android:attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white" >
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <TextView
+            android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="github"
             android:layout_gravity="center"
-            android:id="@+id/toolbar_title" />
+            android:background="@color/bg_color"
+            android:text="Trending"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/text_size_18"
+            android:textStyle="bold" />
 
 
     </androidx.appcompat.widget.Toolbar>
@@ -29,11 +34,11 @@
         android:id="@+id/nav_host_fragment_container"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:defaultNavHost="true"
-        app:navGraph="@navigation/nav_graph"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
-        />
+        app:navGraph="@navigation/nav_graph" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

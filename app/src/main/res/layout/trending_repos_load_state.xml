@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="8dp">
+    >
 
-    <ProgressBar
+    <LinearLayout
         android:id="@+id/progress"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        >
+        <include
+            layout="@layout/item_repo_placeholder" />
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/error"
         android:text="@string/error_loading"
+        android:textColor="@color/textColor"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/progress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/btnRetry"
         app:backgroundTint="@null"
         android:layout_width="wrap_content"
@@ -28,7 +42,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/border_btn"
         android:text="@string/retry"
+        app:layout_constraintTop_toBottomOf="@id/error"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         />
 
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
