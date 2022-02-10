@@ -6,17 +6,13 @@ buildscript {
         jcenter()
     }
     dependencies {
-//        classpath "com.android.tools.build:gradle:$rootProject.gradleBuildTools"
         classpath('com.android.tools.build:gradle:7.1.1')
 
-//        classpath "com.google.dagger:hilt-android-gradle-plugin:$rootProject.hiltVersion"
         classpath("com.google.dagger:hilt-android-gradle-plugin:2.38.1")
 
-//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
         classpath('org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10')
 
 
-//        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$rootProject.navVersion"
         classpath("androidx.navigation:navigation-safe-args-gradle-plugin:2.4.0")
 
         // NOTE: Do not place your application dependencies here; they belong
@@ -78,4 +74,9 @@ ext {
 
     // Shimmer
     shimmerVersion = "0.5.0"
+
+    // Testing
+    hiltVersion = "2.38.1"
+    fragmentVersion = "1.4.1"
+    roboelectric = "4.5.1"
 }

@@ -14,7 +14,6 @@ import org.junit.runner.RunWith
 import org.mockito.junit.MockitoJUnitRunner
 import pk.syyam.githubtrendingrepos.MainCoroutineRule
 import pk.syyam.githubtrendingrepos.repository.FakeGithubTrendingRepository
-import com.google.common.truth.Truth.assertThat
 import junit.framework.Assert.assertEquals
 import org.mockito.Mock
 import org.mockito.Mockito
