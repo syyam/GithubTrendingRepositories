@@ -76,7 +76,6 @@ ext {
     shimmerVersion = "0.5.0"
 
     // Testing
-    hiltVersion = "2.38.1"
     fragmentVersion = "1.4.1"
     roboelectric = "4.5.1"
 }

@@ -1,4 +1,4 @@
-package pk.syyam.githubtrendingrepos
+package pk.syyam.githubtrendingrepos.ui.fragments
 import android.content.ComponentName
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.fragment.app.testing.FragmentScenario
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import pk.syyam.githubtrendingrepos.HiltTestActivity
 
 @ExperimentalCoroutinesApi
 inline fun <reified T : Fragment> launchFragmentInHiltContainer(

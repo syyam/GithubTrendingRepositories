@@ -5,7 +5,8 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
 
 android {
-    compileSdk 31
+    compileSdkVersion 31
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "pk.sellphoneapp.githubtrendingrepos"
@@ -13,7 +14,9 @@ android {
         targetSdk rootProject.targetSdk
         versionCode rootProject.versionCode
         versionName rootProject.versionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+
+        testInstrumentationRunner "pk.syyam.githubtrendingrepos.ui.fragments.MyTestRunner"
     }
 
     buildTypes {
@@ -23,6 +26,7 @@ android {
         }
     }
     buildFeatures {
+        dataBinding = true
         viewBinding true
     }
     compileOptions {
@@ -36,6 +40,12 @@ android {
         unitTests {
             includeAndroidResources = true
         }
+    }
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.0'
+    }
+    kapt {
+        correctErrorTypes true
     }
 }
 
@@ -89,14 +99,17 @@ dependencies {
     implementation "com.google.dagger:hilt-android:$rootProject.hiltVersion"
     kapt "com.google.dagger:hilt-compiler:$rootProject.hiltVersion"
     testImplementation "com.google.dagger:hilt-android-testing:$rootProject.hiltVersion"
-    kaptTest "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
+    kaptAndroidTest  "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
     debugImplementation "androidx.fragment:fragment-testing:$rootProject.fragmentVersion"
     testImplementation "org.robolectric:robolectric:$rootProject.roboelectric"
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation "android.arch.core:core-testing:1.1.1"
 
     implementation "androidx.test:core:1.4.0"
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     implementation 'androidx.core:core-ktx:1.7.0'
-    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'junit:junit:4.12'
     testImplementation "org.mockito:mockito-core:3.3.3"
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 }
