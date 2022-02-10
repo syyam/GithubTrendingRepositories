@@ -7,8 +7,6 @@ My implementation of a sample app that fetches trending github repos
 ### Architecture
 MVVM Architecture (View - DataBinding - ViewModel - Model)
 
-<img src="assets/architecture.png" height="540">
-
 ### Description
 
 - Added dependency injection with Hilt, included android tests
