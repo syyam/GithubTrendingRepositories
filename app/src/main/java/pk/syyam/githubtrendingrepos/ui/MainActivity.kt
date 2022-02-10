@@ -38,11 +38,9 @@ class MainActivity : AppCompatActivity() {
                 .equals(getString(R.string.string_dark_theme))
         ) {
             setTheme(R.style.AppThemeDark)
-            Toast.makeText(this, "dark", Toast.LENGTH_SHORT).show()
 
         } else {
             setTheme(R.style.AppThemeLight)
-            Toast.makeText(this, "light", Toast.LENGTH_SHORT).show()
 
         }
 
@@ -54,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         super.onCreateOptionsMenu(menu)
         menuInflater.inflate(R.menu.menu_theme, menu)
         return true

@@ -1,12 +1,12 @@
 package pk.syyam.githubtrendingrepos.viewmodels
 
-import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.lifecycle.viewModelScope
 import androidx.paging.cachedIn
 import dagger.hilt.android.lifecycle.HiltViewModel
+import pk.syyam.githubtrendingrepos.repository.DefaultGithubTrendingRepository
 import pk.syyam.githubtrendingrepos.repository.GithubTrendingRepository
 import javax.inject.Inject
 

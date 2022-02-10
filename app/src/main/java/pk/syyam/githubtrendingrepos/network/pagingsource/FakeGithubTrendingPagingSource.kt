@@ -1,18 +1,15 @@
 package pk.syyam.githubtrendingrepos.network.pagingsource
 
-import android.util.Log
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import pk.syyam.githubtrendingrepos.model.Items
-import pk.syyam.githubtrendingrepos.network.RetrofitService
+import pk.syyam.githubtrendingrepos.model.Owner
 import retrofit2.HttpException
 import java.io.IOException
 
 private const val REPOS_STARTING_PAGE_INDEX = 1
 
-// PagingSource is the base class for loading snapshots of data into a stream of PagingData
-class GithubTrendingPagingSource(
-    private val githubApi: RetrofitService,
+class FakeGithubTrendingPagingSource(
 ) : PagingSource<Int, Items>() {
 
 
@@ -23,11 +20,18 @@ class GithubTrendingPagingSource(
 
         return try {
 
-            val response = githubApi.getTrendingRepos(
-                page = pageIndex
-            )
 
-            val repos = response.items
+            val repos = listOf(
+                Items(
+                    id = 1,
+                    name = "syyam",
+                    description = "desc",
+                    fullName = "fullName",
+                    stars = 1,
+                    language = "language",
+                    owner = Owner(1, "login", "avatar_url")
+                )
+            )
 
 //            This is where I am going to retrieve my items from a service (in my case, Retrofit)
 //            and return them wrapped into a LoadResult type.

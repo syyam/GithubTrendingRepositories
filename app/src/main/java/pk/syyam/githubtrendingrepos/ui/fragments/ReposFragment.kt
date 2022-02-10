@@ -3,20 +3,22 @@ package pk.syyam.githubtrendingrepos.ui.fragments
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.VisibleForTesting
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.paging.LoadState
 import com.facebook.shimmer.ShimmerFrameLayout
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import pk.syyam.githubtrendingrepos.R
 import pk.syyam.githubtrendingrepos.adapters.TrendingReposAdapter
 import pk.syyam.githubtrendingrepos.adapters.TrendingReposLoadStateAdapter
 import pk.syyam.githubtrendingrepos.databinding.FragmentReposBinding
 import pk.syyam.githubtrendingrepos.viewmodels.ReposViewModel
 import javax.inject.Inject
-
 
 @AndroidEntryPoint
 class ReposFragment : Fragment(R.layout.fragment_repos) {
@@ -25,8 +27,7 @@ class ReposFragment : Fragment(R.layout.fragment_repos) {
 
     private var binding: FragmentReposBinding? = null
 
-
-    private val reposViewModel by viewModels<ReposViewModel>()
+    lateinit var reposViewModel: ReposViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +55,7 @@ class ReposFragment : Fragment(R.layout.fragment_repos) {
     }
 
     private fun initView(view: View) {
+        reposViewModel = ViewModelProvider(requireActivity()).get(ReposViewModel::class.java)
         binding = FragmentReposBinding.bind(view)
         setHasOptionsMenu(true)
         val adapter = TrendingReposAdapter()

@@ -29,10 +29,15 @@ class TrendingReposAdapter :
         }
     }
 
+    fun setValues(a: List<Items>) {
+
+    }
+
     class ViewHolder(val binding: ItemTrendingRepoBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
     }
+
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         getItem(position).let { repo ->

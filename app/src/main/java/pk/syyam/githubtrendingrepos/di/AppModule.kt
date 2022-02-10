@@ -8,9 +8,12 @@ import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import pk.syyam.githubtrendingrepos.network.RetrofitService
+import pk.syyam.githubtrendingrepos.repository.DefaultGithubTrendingRepository
+import pk.syyam.githubtrendingrepos.repository.GithubTrendingRepository
 import pk.syyam.githubtrendingrepos.utils.PreferenceKeys
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -19,16 +22,20 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(): Retrofit =
+    fun provideRetrofit(): RetrofitService =
         Retrofit.Builder()
             .baseUrl(RetrofitService.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+            .create(RetrofitService::class.java)
 
-    @Provides
+
     @Singleton
-    fun provideTrendingApi(retrofit: Retrofit): RetrofitService =
-        retrofit.create(RetrofitService::class.java)
+    @Provides
+    fun provideDefaultShoppingRepository(
+        api: RetrofitService
+    ) = DefaultGithubTrendingRepository(api) as GithubTrendingRepository
+
 
     @Singleton
     @Provides
